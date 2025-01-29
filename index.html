@@ -7,30 +7,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <div class="container">
     <h1>Perguntas e Respostas</h1>
-    <p>Bem-vindo ao nosso site de perguntas e respostas! Faça uma pergunta ou responda as perguntas abaixo.</p>
-  </header>
-
-  <main>
-    <section class="form">
-      <h2>Faça sua pergunta</h2>
-      <form id="perguntaForm">
-        <textarea id="pergunta" placeholder="Digite sua pergunta..." required></textarea>
-        <button type="submit">Postar Pergunta</button>
-      </form>
-    </section>
-
-    <section class="perguntas">
-      <h2>Perguntas Recentes</h2>
-      <div id="listaPerguntas"></div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Perguntas e Respostas - Todos os direitos reservados.</p>
-  </footer>
-
+    <div id="qa-list"></div>
+    <form id="qa-form">
+      <label for="question">Pergunta</label>
+      <input type="text" id="question" required>
+      <label for="answer">Resposta</label>
+      <input type="text" id="answer" required>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
