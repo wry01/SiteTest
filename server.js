@@ -13,12 +13,11 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-// Função para registrar o IP
 function logVisitorIP(req) {
   const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   const date = new Date().toISOString();
   const logEntry = `IP: ${ip}, Date: ${date}\n`;
-  
+
   fs.appendFile('visitor-logs.txt', logEntry, (err) => {
     if (err) {
       console.error("Erro ao registrar o IP:", err);
@@ -35,12 +34,12 @@ setInterval(() => {
 }, 24 * 60 * 60 * 1000);
 
 app.get('/questions', (req, res) => {
-  logVisitorIP(req); // Loga o IP ao acessar as perguntas
+  logVisitorIP(req);
   res.json(questionsAndAnswers);
 });
 
 app.post('/questions', (req, res) => {
-  logVisitorIP(req); // Loga o IP ao enviar perguntas
+  logVisitorIP(req);
   const { question, answer } = req.body;
   if (!question || !answer) {
     return res.status(400).send('Pergunta e resposta são necessárias');
