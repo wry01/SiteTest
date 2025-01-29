@@ -8,16 +8,28 @@
 </head>
 <body>
   <div class="container">
-    <h1>Perguntas e Respostas</h1>
-    <div id="qa-list"></div>
-    <form id="qa-form">
-      <label for="question">Pergunta</label>
-      <input type="text" id="question" required>
-      <label for="answer">Resposta</label>
-      <input type="text" id="answer" required>
-      <button type="submit">Enviar</button>
-    </form>
+    <header>
+      <h1>Perguntas e Respostas</h1>
+      <p>Envie suas perguntas e veja as respostas de outros usuários.</p>
+    </header>
+
+    <div class="qa-section">
+      <div id="qa-list" class="qa-list"></div>
+
+      <form id="qa-form" class="qa-form">
+        <div class="input-group">
+          <label for="question">Pergunta</label>
+          <input type="text" id="question" name="question" placeholder="Digite sua pergunta..." required>
+        </div>
+        <div class="input-group">
+          <label for="answer">Resposta</label>
+          <input type="text" id="answer" name="answer" placeholder="Digite a resposta..." required>
+        </div>
+        <button type="submit">Enviar Pergunta</button>
+      </form>
+    </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
